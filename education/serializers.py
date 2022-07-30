@@ -2,10 +2,10 @@ from .models import *
 from rest_framework import serializers
 
 
-class SchoolSerializer(serializers.HyperlinkedModelSerializer):
+class SchoolSerializer(serializers.ModelSerializer):
     class Meta:
         model = School
-        fields = ['id', 'name', 'url']
+        fields = ['id', 'name', 'address']
 
 
 class SClassSerializer(serializers.HyperlinkedModelSerializer):

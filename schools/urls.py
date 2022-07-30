@@ -19,12 +19,8 @@ from django.urls import include, path
 from education import views
 from django.views.generic import TemplateView
 
-
-
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('schools', views.schools),
-    path('schools/<int:school_id>', views.school_id)
+    # path('schools', views.schools),
+    path('schools/<int:school_id>', views.SchoolAPIView.as_view())
 ]

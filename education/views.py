@@ -1,8 +1,14 @@
 from django.http import HttpResponse
+from rest_framework import generics
 
 from .serializers import *
 from .models import School
 import json
+
+
+class SchoolAPIView(generics.ListAPIView):
+    queryset = School.objects.all()
+    serializer_class = SchoolSerializer
 
 
 def schools(request):
